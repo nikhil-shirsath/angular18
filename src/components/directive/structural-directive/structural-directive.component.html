@@ -1,0 +1,41 @@
+<p>structural-directive works!</p>
+<div class="mt-2 p-2 bg-success">
+    <h1>directive :</h1>
+    <br>
+    <p> it is the class in angular which can change the behaviour or structure of element in dom. It can chage the structure of element.</p>
+</div>
+
+<div class="row mt-2  p-2 text-black rounded">
+    <div class="col-3 mt-2  p-2 rounded bg-secondary" *ngIf="toShow">div1</div>
+    <div class="col-3 mt-2  p-2 rounded bg-danger" *ngIf="toggleControl">div2</div>
+    <div class="col-3 mt-2  p-2 rounded bg-success">div3</div>
+    <div class="col-3 mt-2  p-2 rounded bg-primary"> div4</div>
+</div>
+
+<div class="row mt-2  p-2 text-black rounded">
+    <div class="col-3 mt-2  p-2 rounded ">
+        <button class="btn btn-danger" (click)="hideDiv()">
+            hide
+        </button>
+        <button class="btn btn-primary ms-4" (click)="showDiv()" >
+            show
+        </button>
+    </div>
+    <div class="col-3 mt-2  p-2 rounded ">
+        <button class="btn btn-primary" (click)="toggle()">Toggle</button>
+    </div>
+    <div class="col-3 mt-2  p-2 rounded ">
+        <input type="text" placeholder="num1">
+        <input type="text" placeholder="num2">
+    </div>
+    <div class="col-3 mt-2  p-2 rounded "> 
+        <select [(ngModel)]="countryName">
+            <option value="">select</option>
+            <option value="india">India</option>
+            <option value="chine">China</option>
+            <option value="japan">japan</option>
+            <option value="russia">Russia</option>
+        </select>
+        <h1>{{countryName}}</h1>
+    </div>
+</div>
