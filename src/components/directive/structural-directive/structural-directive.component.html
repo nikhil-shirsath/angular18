@@ -2,14 +2,15 @@
 <div class="mt-2 p-2 bg-success">
     <h1>directive :</h1>
     <br>
-    <p> it is the class in angular which can change the behaviour or structure of element in dom. It can chage the structure of element.</p>
+    <p> it is the class in angular which can change the behaviour or structure of element in dom. It can chage the
+        structure of element.</p>
 </div>
 
 <div class="row mt-2  p-2 text-black rounded">
     <div class="col-3 mt-2  p-2 rounded bg-secondary" *ngIf="toShow">div1</div>
     <div class="col-3 mt-2  p-2 rounded bg-danger" *ngIf="toggleControl">div2</div>
-    <div class="col-3 mt-2  p-2 rounded bg-success">div3</div>
-    <div class="col-3 mt-2  p-2 rounded bg-primary"> div4</div>
+    <div class="col-3 mt-2  p-2 rounded bg-success" *ngIf="firstInput==secondInput">div3</div>
+    <div class="col-3 mt-2  p-2 rounded bg-primary" *ngIf="countryName=='india'"> div4</div>
 </div>
 
 <div class="row mt-2  p-2 text-black rounded">
@@ -17,7 +18,7 @@
         <button class="btn btn-danger" (click)="hideDiv()">
             hide
         </button>
-        <button class="btn btn-primary ms-4" (click)="showDiv()" >
+        <button class="btn btn-primary ms-4" (click)="showDiv()">
             show
         </button>
     </div>
@@ -25,10 +26,11 @@
         <button class="btn btn-primary" (click)="toggle()">Toggle</button>
     </div>
     <div class="col-3 mt-2  p-2 rounded ">
-        <input type="text" placeholder="num1">
-        <input type="text" placeholder="num2">
+        <p>if value of both input is same then only visible otherwise hidden</p>
+        <input type="text" placeholder="num1" [(ngModel)]="firstInput">
+        <input type="text" placeholder="num2" [(ngModel)]="secondInput">
     </div>
-    <div class="col-3 mt-2  p-2 rounded "> 
+    <div class="col-3 mt-2  p-2 rounded ">
         <select [(ngModel)]="countryName">
             <option value="">select</option>
             <option value="india">India</option>
@@ -38,4 +40,60 @@
         </select>
         <h1>{{countryName}}</h1>
     </div>
+</div>
+
+<div class="row">
+    <h1>*ngFor directive</h1>
+    <p>to iterate through all the elements of the list we uses *ngFor. To use it we need to import common module in
+        compnent.ts files import section.</p>
+
+
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let item of nameArray">
+                {{item}}
+            </li>
+        </ul>
+
+    </div>
+    <div class="col-3">
+        <label for="myfriends">My friends</label>
+        <select [(ngModel)]="selectedName" id="myfriends">
+            <option *ngFor="let name of nameArray" [value]="name">{{name}}</option>
+        </select>
+        <p>name you selected is <span>{{selectedName}}</span></p>
+    </div>
+    <div class="col-3">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <td>Sr No</td>
+                <td>Course Id</td>
+                <td>Course Name</td>
+                <td> Course Fees</td>
+                <td>Course Duration(in months)</td>
+                <td>Affordable</td>
+            </tr>
+        </thead>
+                <tbody>
+                    <tr *ngFor="let course of courses; let sr = index;">
+                        <td>{{sr+1}}</td>
+                        <td>{{course.cid}}</td>
+                        <td>{{course.cname}}</td>
+                        <td>{{course.cfees}}</td>
+                        <td>{{course.cduration}}</td>
+                        <td *ngIf="course.cfees < 2000;else elseBlock">
+                            <span>Affordable</span>
+
+                        </td>
+                        <ng-template #elseBlock>
+                            <td>Not Affordable</td>
+                          </ng-template>
+                    </tr>
+                </tbody>
+            
+        </table>
+    </div>
+    <div class="col-3"></div>
+
 </div>

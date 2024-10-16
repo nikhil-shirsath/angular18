@@ -14,6 +14,24 @@ export class StructuralDirectiveComponent {
   countryName:string="";
   toShow:boolean= true;
   toggleControl:boolean=true;
+ 
+  firstInput:string='';
+  secondInput:string='';
+
+  nameArray:string[]=['nikhil','mahesh','shivam','abhishek'];
+
+  selectedName:string="";
+//array of objects in ts 
+
+  courses: any[]=[
+    {cid:11,cname:'cdac',cfees:110000,cduration:6},
+    {cid:23,cname:'Btech',cfees:110000,cduration:48},
+    {cid:14,cname:'bsc',cfees:1100,cduration:36},
+    {cid:154,cname:'npcel',cfees:1500,cduration:6},
+    {cid:16,cname:'full stack',cfees:5000,cduration:12},
+  ];
+
+
   hideDiv(){
     this.toShow= false;
   }
@@ -22,10 +40,11 @@ export class StructuralDirectiveComponent {
   }
 
   toggle(){
-    if(this.toggleControl){
-      this.toggleControl= false;
-    }else{
-      this.toggleControl=true;
-    }
+     this.toggleControl= !this.toggleControl;
+    // if(this.toggleControl){
+    //   this.toggleControl= false;
+    // }else{
+    //   this.toggleControl=true;
+    // }
   }
 }
