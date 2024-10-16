@@ -1,0 +1,79 @@
+<p>databinding works!</p>
+<div class="row">
+    <h1>one way data binding </h1>
+    <div class="col-4">one way data binding from .ts to .html
+
+        <div class="row bg-success "  >
+            <div class="col-4 ">
+                interpulation
+                <h4>{{courseName}}</h4>
+
+            </div>
+            <div class="col-4">{{studentName}}</div>
+            <div class="col-4">{{fees}}</div>
+            <div>
+                <input type={{inputType}} placeholder="this is comming using interpulation">interpulation
+            </div>
+            <div><input type={{passwordInput}} placeholder="this is password using interpulation"></div>
+        </div>
+    </div>
+    <div class="col-4">
+
+        Property Binding 
+        : Dynamically passing the value to the Properties/ attributes of the html tag is called propery binding 
+        it can be acheived using [propertyname] ="valriable name"
+        <div class=" row bg-danger">danger
+            <div class="col-4">
+                <input [type]="passwordInput" [value]="studentName">
+            </div>
+            <div class="col-4">
+                <input [type]="radioInput" >
+                <label for="">{{courseName}}</label>
+            </div>
+            <div class="col-4"></div>
+
+        </div>
+    </div>
+    <div class="col-4">
+        Event Binding
+        : send date from view to component using on occuring some event is called event binding. 
+        To achieve it we uses functions in ts file 
+
+        <button class="btn btn-primary" (click)="showAlert('Welcome to alert box. ')">click me </button>
+        <span (click)="showAlert('span is clicked.')">click me i am span</span>
+
+        <button class="btn btn-success" (click)="changeCouseName()">Change course name</button>
+    </div>
+</div>
+
+<div class="row">
+    <h1>two way data binding</h1>
+    <div class="row">two  way data binding from .ts to .html file.
+        <br>
+         using ngModel to use it we must to import formModule
+        <br>
+        then use [(ngModel)]="variable name "
+        so it will make changes is whole file whereever its used.
+        <br>
+        it works with only input fields where user can enter some values.
+        </div>
+    <div class="col-4">
+        <input type="text" [(ngModel)]="courseName">
+    </div>
+    <div class="col-4">
+        <input type="text" [(ngModel)]="stateName"  placeholder="Enter stateName">
+        <br>
+        <select [(ngModel)]="stateName">
+            <option value="select">select</option>
+            <option value="maharashtra">Maharashtra</option>
+            <option value="madhya pradesh">Madhya Pradesh</option>
+            <option value="goa">goa</option>
+        </select>
+        <h1>value selected {{stateName}}</h1>
+    </div>
+    <div class="col-4">
+        using signal for state management its just like a observable in angulars previous version
+        <button class="btn btn-primary" (click)="countClick()">click Me</button>
+        <h1>No of Clicks = {{count()}}</h1>
+    </div>
+</div>
