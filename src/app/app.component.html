@@ -1,4 +1,4 @@
-<h1>hello Nikhil begin with angular18</h1>
+<h1>Hello Nikhil begin with angular18</h1>
 <!--
 
 package.json is a file which contains all the requirments and info of project for create and it helps node modules to download the
@@ -21,5 +21,55 @@ dependancies from google
 <app-databinding></app-databinding> -->
 
 <!-- <app-structural-directive></app-structural-directive> -->
+<!-- 
 
-<app-attribute-directive></app-attribute-directive>
+
+<app-attribute-directive></app-attribute-directive> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark text-white">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" routerLink="list-employee">List Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" routerLink ="add-employee">Add Employee</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white"  routerLink="data-binding" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Data Binding
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-white" href="#">Action</a></li>
+              <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider "></li>
+              <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link  text-white" routerLink="structure-directive"  >Structur Directive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" routerLink="attribute-directive"  >Attribute Directive</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success text-white" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
