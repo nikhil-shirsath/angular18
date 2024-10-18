@@ -1,0 +1,120 @@
+<p>if-else-lader works!</p>
+<div class="row">
+    <!-- if condition  -->
+    @if(isDiv1Clicked){
+    <div class="col-3 mt-2 p-3 divStyle text-center bg-primary">
+        <h4>div1</h4>
+    </div>
+    }
+
+    <!-- if else condition -->
+    @if(isShowDiv2){
+    <div class="col-3 mt-2 p-3 divStyle text-center bg-secondary">
+        <h4>div2</h4>
+    </div>
+    }
+    @else{
+    <div class="col-3 mt-2 p-3 divStyle text-center text-white bg-dark">
+        <h4>div2</h4>
+    </div>
+    }
+
+    <!-- if else lader  condition  -->
+
+    @if(num1==num2){
+    <div class="col-3 mt-2 p-3 divStyle text-center bg-warning">
+        <h4>Equal</h4>
+    </div>
+    }
+    @else if(num1>num2){
+    <div class="col-3 mt-2 p-3 divStyle text-center bg-warning">
+        <h4>Num1 Greter</h4>
+    </div>
+    }
+    @else if(num1< num2){ <div class="col-3 mt-2 p-3 divStyle text-center bg-warning">
+        <h4>Num2 Greter</h4>
+</div>
+}
+@else{
+<div class="col-3 mt-2 p-3 divStyle text-center bg-warning">
+    <h4>Enter currect</h4>
+</div>
+}
+
+<div class="col-3 mt-2 p-3 divStyle text-center " [ngStyle]="{'background-color' : selectedDropdown}">
+    <h4>Selected Dropdown name 
+        @switch(selectedDropdown){
+            @case('red'){
+                <span>RED</span>
+            }
+            @case('red'){
+                <span>RED</span>
+            }@case('blue'){
+                <span>BLUE</span>
+            }@case('black'){
+                <span>BLACK</span>
+            }@case('yellow'){
+                <span>YELLOW</span>
+            }
+        }
+    </h4>
+</div>
+</div>
+
+
+<div class="row mt-5 text-center">
+    <div class="col-3">
+        <button class="btn btn-primary ms-4" (click)="clickShow()">
+            show
+        </button>
+        <button class="btn btn-secondary ms-4" (click)="clickHide()">
+            hide
+        </button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="toggle()">
+            Toggle
+        </button>
+    </div>
+    <div class="col-3">
+        <input type="text" placeholder="Num1" [(ngModel)]="numInput1">
+        <input type="text" placeholder="Num2" [(ngModel)]="numInput2">
+        <br>
+        <button class="btn btn-primary" (click)="compare()">
+            Compare
+        </button>
+    </div>
+    <div class="col-3">
+        <select [(ngModel)]="selectedDropdown">
+            @for(color of Colors; track $index){
+            <option [value]="color">{{color}}</option>
+            }
+        </select>
+    </div>
+</div>
+
+
+<div class="row col-6 ps-3">
+    <table class="border">
+        <thead>
+            <tr>
+                <th>SR NO</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>DATE OF BIRTH</th>
+                <th>EDUCATION</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of Employees ; track $index){
+            <tr class="border text-center">
+                <td>{{$index+1}}</td>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.dob}}</td>
+                <td>{{emp.education}}</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

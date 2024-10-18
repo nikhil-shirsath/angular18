@@ -4,6 +4,7 @@ import { AddEmployeeComponent } from '../components/add-employee/add-employee.co
 import { DatabindingComponent } from '../components/databinding/databinding.component';
 import { StructuralDirectiveComponent } from '../components/directive/structural-directive/structural-directive.component';
 import { AttributeDirectiveComponent } from '../components/attribute-directive/attribute-directive.component';
+import { IfElseLaderComponent } from '../components/controlStatements/if-else-lader/if-else-lader.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,10 @@ export const routes: Routes = [
     {
         path:'attribute-directive',
         component:AttributeDirectiveComponent
+    },
+    {
+        path:'control-statement',
+        component:IfElseLaderComponent
     },
    
 
