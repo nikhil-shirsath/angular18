@@ -10,7 +10,7 @@ export class NaPipe implements PipeTransform {
     if(value!==null&& value!==undefined&&value!==''){
       return value;
     }
-    return null;
+    return 'NA';
   }
 
 }

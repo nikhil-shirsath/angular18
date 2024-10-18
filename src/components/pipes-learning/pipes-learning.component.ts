@@ -19,7 +19,8 @@ export class PipesLearningComponent {
   student:any={
     roll:123,
     name:'shivam',
-    age:23
+    age:23,
+    job:''
 
   };
 
