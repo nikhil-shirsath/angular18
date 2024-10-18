@@ -1,0 +1,50 @@
+<p>pipes-learning works!</p>
+<div class="container">
+    <div class="row">
+        <h1>Pipes</h1>
+        <p>pipes are used to transform data to template.</p>
+        <p>It manipulates data while display but it not modify or change the origional data. </p>
+    </div>
+    <div class="row">
+        <div class="col-3 bg-primary">
+            <h1>Built in Pipes </h1>
+            <input type="text" placeholder="Enter Your name " [(ngModel)]="nameInput">
+            <p>Upepr case Pipes : {{nameInput|uppercase}}</p>
+            <p>Lower case Pipe :{{nameInput|lowercase}}</p>
+            <p>Title Pipe :every first charecter of word will be Capital  <span> {{nameInput|titlecase}}</span></p>
+
+        </div>
+        <div class="col-3 bg-warning">
+            <h1>Currecy Pipes </h1>
+            <input type="number" placeholder="Enter Number" [(ngModel)]="amount">
+            <p>Use of Currency Pipe <span class="text-white">{{amount|currency:'USD':true}}</span></p>
+
+            <h1>Date Pipe</h1>
+            <p>date Pipe use <span class="text-white">{{today|date}}</span></p>
+        </div>
+        <div class="col-3 bg-success">
+            <h1>Json Pipe</h1>
+            <p>It converts object into the string format we cannot directly print object for that first we convert object to json string then we displays</p>
+            <p>origional object on print {{student}} </p>
+            <p>after using json pipe 
+            <span class="text-white">
+                {{student|json}}
+            </span></p>
+
+        
+        </div>
+        <div class="col-3 bg-danger">
+            <h1>async pipe </h1>
+            <p>This pipe is mostly used with observable data means Api calls</p>
+            <p>Origional Data<span class="text-white">{{currentTime}}</span></p>
+            <p>Async Pipe Data<span class="text-white">{{currentTime|async|date:'hh:mm:ss'}}</span></p>
+            <b class="text-white">use more then one pipes on a single property is called Chaining of pipes</b>
+        </div>
+    </div>
+
+    <div class="rowmt-6">
+        <div class="col-6 bg-success"><input type="text" [(ngModel)]="userInput">
+        <p>NA Pipe Use <span>{{userInput|na}}</span> </p>
+        </div>
+    </div>
+</div>
