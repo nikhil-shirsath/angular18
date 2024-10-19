@@ -6,6 +6,8 @@ import { StructuralDirectiveComponent } from '../components/directive/structural
 import { AttributeDirectiveComponent } from '../components/attribute-directive/attribute-directive.component';
 import { IfElseLaderComponent } from '../components/controlStatements/if-else-lader/if-else-lader.component';
 import { PipesLearningComponent } from '../components/pipes-learning/pipes-learning.component';
+import { TemplateFormComponent } from '../components/template-form/template-form.component';
+import { ReactiveFormComponent } from '../components/reactive-form/reactive-form.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +39,16 @@ export const routes: Routes = [
             component:PipesLearningComponent
 
     },
+    {
+        path:'template-form',
+            component:TemplateFormComponent
+
+   },
+   {
+    path:'reactive-form',
+        component:ReactiveFormComponent
+
+},
    
 
 ];
