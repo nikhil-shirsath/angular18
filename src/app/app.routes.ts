@@ -8,6 +8,8 @@ import { IfElseLaderComponent } from '../components/controlStatements/if-else-la
 import { PipesLearningComponent } from '../components/pipes-learning/pipes-learning.component';
 import { TemplateFormComponent } from '../components/template-form/template-form.component';
 import { ReactiveFormComponent } from '../components/reactive-form/reactive-form.component';
+import { GetApiCallComponent } from '../components/get-api-call/get-api-call.component';
+import { PostApiComponent } from '../components/post-api/post-api.component';
 
 export const routes: Routes = [
     {
@@ -47,8 +49,14 @@ export const routes: Routes = [
    {
     path:'reactive-form',
         component:ReactiveFormComponent
-
-},
-   
+    },
+    {
+    path:'get-api',
+        component:GetApiCallComponent
+    },
+    {
+        path:'post-api',
+            component:PostApiComponent
+        },
 
 ];

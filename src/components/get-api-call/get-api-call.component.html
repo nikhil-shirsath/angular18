@@ -1,1 +1,35 @@
+<div class="container">
 <p>get-api-call works!</p>
+<p>Apis are used to communicate between two softwares. Using Apis software enterchanges information.</p>
+</div>
+
+<div class="container">
+    <button class="btn btn-primary" (click)="getAllApi()">Call Get API</button>
+    <select name="" id="">
+        @for(user of userList ; track $index){
+            <option [value]="user.userId">{{user.title}}</option>
+        }
+        
+    </select>
+
+    <table class="border">
+        <thead>
+            <tr>
+                <td>User Id</td>
+                <td>Id</td>
+                <td>Title </td>
+            </tr>
+        </thead>
+        <tbody>
+            @for(user of userList; track $index){
+            <tr class="border">
+                <td>{{user.userId}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.title}}</td>
+               
+            </tr>
+        }
+        </tbody>
+   
+    </table>
+</div>

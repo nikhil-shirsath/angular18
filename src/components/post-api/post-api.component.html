@@ -1,0 +1,58 @@
+<p>post-api works!</p>
+<p>Used To insert object into the database is called Post Method.</p>
+<div class="container">
+    <div class="row">
+        <div class="col9">
+            <table class="border">
+                <thead>
+                    <tr class="border">
+                        <td class="border">Sr No</td>
+                        <td class="border">User Id</td>
+                        <td class="border">Title</td>
+                        <td class="border">Body</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(user of userList ; track $index){
+                    <tr class="border">
+                        
+                        <td class="border">{{$index+1}}</td>
+                        <td class="border">{{user.userId}}</td>
+                        <td class="border">{{user.userId}}</td>
+                        <td class="border">{{user.userId}}</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3">
+
+            <h1>form user</h1>
+            <form [formGroup]="postform">
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" formControlName="userId">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label" >Title</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" formControlName="title">
+                  </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label for="inputPassword4" class="col-sm-2 col-form-label">Body</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputPassword4" formControlName="body">
+                    </div>
+                  </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Sign in</button>
+              </form>
+            
+
+        </div>
+    </div>
+</div>
