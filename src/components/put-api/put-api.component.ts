@@ -1,16 +1,16 @@
+import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ApiserviceService } from '../../services/apiservice.service';
 
 @Component({
-  selector: 'app-post-api',
+  selector: 'app-put-api',
   standalone: true,
-  imports: [ReactiveFormsModule] ,
-  templateUrl: './post-api.component.html',
-  styleUrl: './post-api.component.css'
+  imports: [ReactiveFormsModule,JsonPipe],
+  templateUrl: './put-api.component.html',
+  styleUrl: './put-api.component.css'
 })
-export class PostApiComponent implements OnInit {
+export class PutApiComponent implements OnInit{
 
 
   //json post api uri
@@ -23,11 +23,9 @@ export class PostApiComponent implements OnInit {
    */
 
     userList:any[]=[];
-    
+
     postFormData:any;
 
-    apiCallService = inject(ApiserviceService); //this is user defined service  inject 
-    http= inject(HttpClient);
 
     postform:FormGroup= new FormGroup({
       userId: new FormControl(),
@@ -36,8 +34,12 @@ export class PostApiComponent implements OnInit {
     })
 
 
+    http= inject(HttpClient);
+
+
+
     ngOnInit(): void {
-        this.onGetData();
+        this.getAllData();
     }
 
 
@@ -53,22 +55,30 @@ export class PostApiComponent implements OnInit {
       });
     }
 
-    // onGetData(){
-    //   debugger;
-    //   this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res:any)=>{
-    //     debugger;
-    //     this.userList=res;
-    //   },error=>{
-    //     console.log("error occured");
-    //   });
-    // }
+    getAllData(){
+      this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(
+        (res:any)=>{
+          this.userList= res;
+        },error=>{
+          console.log("error occured");
+        }
+      );
+    }
 
-    onGetData(){
-      this.apiCallService.getAllApiCall().subscribe((res:any)=>{
-        this.userList=res;
-      },error=>{
-        console.log("error occured")
+    onEdit(obj:any){
+      debugger;
+      console.log(obj);
+      debugger; 
+      this.postform.setValue({
+        userId: obj.userId,
+        title: obj.title,
+        body: obj.body
       });
+      console.log(this.postform);
     }
     
 }
+
+
+
+
