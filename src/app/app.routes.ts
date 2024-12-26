@@ -11,6 +11,7 @@ import { ReactiveFormComponent } from '../components/reactive-form/reactive-form
 import { GetApiCallComponent } from '../components/get-api-call/get-api-call.component';
 import { PostApiComponent } from '../components/post-api/post-api.component';
 import { PutApiComponent } from '../components/put-api/put-api.component';
+import { AllapisComponent } from '../allapis/allapis.component';
 
 export const routes: Routes = [
     {
@@ -62,6 +63,10 @@ export const routes: Routes = [
     {
         path:'put-api',
             component:PutApiComponent
-        },
+    },
+    {
+        path:'all-apis',
+            component:AllapisComponent
+    },
 
 ];
